@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Bhanuchander",
+      "lastName": "KOTTURI",
+      "phoneNumber": "9966152342",
+      "designation": "developer",
+      "city": "hyderabad"
+    },
+    {
+      "id": 2,
+      "firstName": "bhanu",
+      "lastName": "chander",
+      "phoneNumber": "9177322107",
+      "designation": "angular ",
+      "city": "kolkata"
+    },
+    {
+      "id": 3,
+      "firstName": "daling",
+      "lastName": "Prabhas",
+      "phoneNumber": "9923446566",
+      "designation": "intern",
+      "city": "chennai"
+    }
+  ]
+}

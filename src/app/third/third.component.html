@@ -1,0 +1,30 @@
+<div class="container">
+    <h2> Employs List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Name </th>
+                <th> Phone Number </th>
+                <th> Designation </th>
+                <th> City </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employ of employs">
+                <td> {{employ.id}} </td>
+                <td> {{employ.firstName}} {{employ.lastName}}</td>
+                <td> {{employ.phoneNumber}}</td>
+                <td> {{employ.designation}}</td>
+                <td> {{employ.city}}</td>
+                <td>
+                    <button mat-button color="primary" (click)="editUser(employ.id)">Edit</button>
+                    <button mat-button color="warn" (click)="deleteEmploy(employ.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+

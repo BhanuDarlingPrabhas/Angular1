@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <h1> Edit User </h1>
+    <hr/>
+    {{user | json}}
+
+    <form #form="ngForm">
+        <!-- ID Column  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput  type="number" name="id" #id="ngModel" [(ngModel)]="user.id" required>
+                </mat-form-field>
+                <span *ngIf="id.errors && (id.touched || id.dirty)" style="color:red ;">
+                    <span [hidden]="!id.errors['required']"> Enter Id </span>
+                </span>
+            </div>            
+        </div>
+        <!-- name columns -->
+    <div class="row">
+        <!-- first name column -->
+        <div class="col-md-2">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" name="firstName" #firstName="ngModel" [(ngModel)]="user.firstName" required>
+            </mat-form-field>
+            <span *ngIf="firstName.errors && (firstName.touched || firstName.dirty)" style="color:red ;">
+                <span [hidden]="!firstName.errors['required']"> Enter First Name </span>
+            </span>
+        </div>
+        <!-- last name column -->
+        <div class="col-md-4">
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" name="lastName" #lastName="ngModel" [(ngModel)]="user.lastName" required>
+            </mat-form-field>
+            <span *ngIf="lastName.errors && (lastName.touched || lastName.dirty)" style="color: red;">
+                <span [hidden]="!lastName.errors['required']"> Enter Correct Last Name </span>
+            </span>
+        </div>
+    </div>
+        <!-- Phone Number Column  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> Phone Number </mat-label>
+                    <input matInput  type="text" name="phoneNumber" #phoneNumber="ngModel"  [(ngModel)]="user.phoneNumber" pattern="^[6-9]{1}[0-9]{9}$" required>
+                </mat-form-field>
+                <span *ngIf="phoneNumber.errors && (phoneNumber.touched || phoneNumber.dirty)" style="color: red;">
+                    <span [hidden]="!phoneNumber.errors['required']"> Enter phone number </span>
+                    <span [hidden]="!phoneNumber.errors['pattern']"> Enter Valid Phone Number </span>
+                </span>
+            </div>            
+        </div>
+        <!-- Designation  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> Designation </mat-label>
+                    <input matInput  type="text" name="designation" #designation="ngModel" [(ngModel)]="user.designation" required>
+                </mat-form-field>
+            </div>      
+            <span *ngIf="designation.errors && (designation.touched || designation.dirty)" style="color: red;">
+                <span [hidden]="!designation.errors['required']"> Enter the Designation </span>
+            </span>      
+        </div>
+        <!-- City  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> City  </mat-label>
+                    <input matInput  type="text" name="city" #city="ngModel" [(ngModel)]="user.city" required>
+                </mat-form-field>
+                <span *ngIf="city.errors && (city.touched || city.dirty)" style="color: red;">
+                    <span [hidden]="!city.errors['required']"> Enter City </span>
+                </span>
+            </div>            
+        </div>
+        <!-- Submit  -->
+        <div class="row">
+            <div class="col-md-2">
+                <!-- <button mat-flat-button color="accent" (click)="updateUser(form)" [disabled]="form.valid"> Submit </button> -->
+                <button mat-flat-button color="accent" (click)="updateUser(form)"> Submit </button>
+            </div>
+        </div>
+    </form>
+</div>
+

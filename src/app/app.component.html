@@ -1,38 +1,8 @@
-<br><br>
-Create Account
-<br><br>
+<mat-toolbar color="primary">
+    <button mat-Fab button (click)="navigateFirst()"> First </button> &nbsp;&nbsp;
+    <button mat-Fab button (click)="navigateSecond()"> Second</button> &nbsp;&nbsp;
+    <button mat-Fab button (click)="navigateThird()"> Third </button> &nbsp;&nbsp;
+    <button mat-Fab button (click)="navigateFifth()">Fifth</button>
+</mat-toolbar>
 
-<input type="text" placeholder="Enter Email" [(ngModel)]="email"><br>
-
-{{ email }} is available
-
-<br><br><br>
-checkboxes and Radio Buttons:<br>
-<input type="checkbox" [(ngModel)]="isChecked"><br>
-
-Checked:{{isChecked}}
-<br><br><br>
-
-<input type="radio" [(ngModel)]="gender" value="Male"> Male
-<input type="radio" [(ngModel)]="gender" value="Female"> Female
-<br>
-
-Gender:{{gender}}
-
-<br><br>
-Sliders and Range Inputs:<br>
-<input type="range" [(ngModel)]="sliderVal">
-value: {{sliderVal}}
-
-
-<br><br><br>
-Select Dropdowns:<br>
-<select [(ngModel)]="tech">
-  <option value="angular">angular</option>
-  <option value="react">react</option>
-  <option value="vue">vue</option>
-  <option value="javascript">javascript</option>
-</select>
-<br>
-value: {{tech}}
-
+<router-outlet></router-outlet>

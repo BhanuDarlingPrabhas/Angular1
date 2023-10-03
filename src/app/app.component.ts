@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FourthComponent } from './fourth/fourth.component';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +8,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  email:string='abc@gmail.com';
-  
-  isChecked:boolean = false;
+  title= 'angular latest version';
+  user : string = 'Bhanuchander';
+  data: any;
 
-  gender:string = 'Male';
+  constructor(private router: Router) {  }
 
-  sliderVal:number = 5;
+  navigateFirst() {
+    this.router.navigate(['first'])
+  }
 
-  tech:string = 'angular';
+  navigateSecond() {
+    this.router.navigate(['second'])
+  }
+
+  navigateThird() {
+    this.router.navigate(['third'])
+  }
+
+  navigateFifth() {
+    this.router.navigate(['fifth'])
+  }
 }
+

@@ -1,0 +1,89 @@
+<div class="container">
+    <h2> Component Directive </h2>
+    <p appFirstDirective> This is My Directives </p>
+
+    <hr />
+
+    <h3> Structural Directives </h3>
+    <div class="row">
+
+        <div class="col-md-4">
+            <h5> NG For Directive </h5>
+            <div class="row" *ngFor="let me of users">
+                <div class="col">
+                    {{me.firstName}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h5> NG If Diective </h5>
+            <div class="row" *ngFor="let me of users">
+                <div class="col" *ngIf="me.designation === 'developer'">
+                    {{me.lastName}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h5> NG Switch Directive </h5>
+            <div class="row" *ngFor="let me of users">
+                <ng-container [ngSwitch]="me.designation">
+                    <div *ngSwitchCase="'developer'">
+                        {{me.firstName}} - designation is Developer
+                    </div>
+                    <div *ngSwitchCase="'intern'">
+                        {{me.firstName}} - designation is Jr developer
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <h4> Attribute Directive </h4>
+    <div class="row">
+        <div class="col-md-4">
+            <h5> NG Style Directive </h5>
+            <table>
+                <thead>
+                    <tr [ngStyle]="{'color':'blue'}">
+                        <td> Name </td>
+                        <td> City </td>
+                        <td> Designation </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let me of users" [ngStyle]="{'color':'black'}"> 
+                        <td> {{me.firstName}} </td>
+                        <td> {{me.city}} </td>
+                        <td> {{me.designation}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <h5> NG Class Directive </h5>
+            <table>
+                <thead>
+                    <tr class="content-style">
+                        <td> Name </td>
+                        <td> City </td>
+                        <td> Designation </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let me of users">
+                        <tr [ngClass]="{'class-style' : me.designation === 'developer'}">
+                            <td> {{me.firstName}}</td>
+                            <td> {{me.city}} </td>
+                            <td> {{me.designation}} </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
