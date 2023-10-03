@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  email:string='abc@gmail.com';
+  
+  isChecked:boolean = false;
+
+  gender:string = 'Male';
+
+  sliderVal:number = 5;
+
+  tech:string = 'angular';
 }
